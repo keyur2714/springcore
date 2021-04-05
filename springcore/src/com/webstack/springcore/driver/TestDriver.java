@@ -3,6 +3,7 @@ package com.webstack.springcore.driver;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import com.webstack.springcore.bean.Contact;
 import com.webstack.springcore.bean.Message;
 import com.webstack.springcore.config.AppConfig;
 import com.webstack.springcore.service.ExamService;
@@ -29,6 +30,10 @@ public class TestDriver {
 		String question = examService.startExam();
 		
 		System.out.println("Question Is : "+question);
+		
+		Contact contact = ctx.getBean("contact",Contact.class);
+		
+		System.out.println(contact.getMobileNo()+" "+contact.getEmail());
 	}
 
 }
