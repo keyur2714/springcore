@@ -2,8 +2,10 @@ package com.webstack.springcore.driver;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.core.env.Environment;
 
 import com.webstack.springcore.bean.Contact;
+import com.webstack.springcore.bean.Customer;
 import com.webstack.springcore.bean.Message;
 import com.webstack.springcore.config.AppConfig;
 import com.webstack.springcore.service.ExamService;
@@ -34,6 +36,16 @@ public class TestDriver {
 		Contact contact = ctx.getBean("contact",Contact.class);
 		
 		System.out.println(contact.getMobileNo()+" "+contact.getEmail());
+		
+		System.out.println("===============Property File Reading====================");
+		
+		Customer customer = ctx.getBean(Customer.class);
+		
+		System.out.println(customer.getName() + " " +customer.getCity()+ " " + customer.getMobileNo() + customer.getEmail());
+		
+		Environment env = ctx.getEnvironment();
+		
+		System.out.println(env.getProperty("db.url"));
 	}
 
 }
