@@ -1,5 +1,7 @@
 package com.webstack.springcore.driver;
 
+import java.util.List;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.core.env.Environment;
@@ -8,7 +10,10 @@ import com.webstack.springcore.bean.Contact;
 import com.webstack.springcore.bean.Customer;
 import com.webstack.springcore.bean.Message;
 import com.webstack.springcore.config.AppConfig;
+import com.webstack.springcore.dto.EmployeeDTO;
+import com.webstack.springcore.service.EmployeeService;
 import com.webstack.springcore.service.ExamService;
+import com.webstack.springcore.service.impl.EmployeeServiceImpl;
 import com.webstack.springcore.service.impl.ExamServiceImpl;
 
 public class TestDriver {
@@ -46,6 +51,14 @@ public class TestDriver {
 		Environment env = ctx.getEnvironment();
 		
 		System.out.println(env.getProperty("db.url"));
+		
+		System.out.println("=============================");
+		
+		EmployeeService employeeService = ctx.getBean(EmployeeServiceImpl.class);
+		
+		List<EmployeeDTO> employeeList = employeeService.list();
+		
+		employeeList.forEach(data->System.out.println(data));
 	}
 
 }
