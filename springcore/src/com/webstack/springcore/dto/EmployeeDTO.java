@@ -5,7 +5,7 @@ import java.util.Date;
 public class EmployeeDTO {
 	private Long id;
 	private String name;
-	private String desingation;
+	private String designation;
 	private Double salary;
 	private Date doj;
 	private Integer age;
@@ -26,12 +26,12 @@ public class EmployeeDTO {
 		this.name = name;
 	}
 
-	public String getDesingation() {
-		return desingation;
+	public String getDesignation() {
+		return designation;
 	}
 
-	public void setDesingation(String desingation) {
-		this.desingation = desingation;
+	public void setDesignation(String designation) {
+		this.designation = designation;
 	}
 
 	public Double getSalary() {
@@ -60,9 +60,8 @@ public class EmployeeDTO {
 
 	@Override
 	public String toString() {
-		return "EmployeeDTO [id=" + id + ", name=" + name + ", desingation=" + desingation + ", salary=" + salary
+		return "EmployeeDTO [id=" + id + ", name=" + name + ", designation=" + designation + ", salary=" + salary
 				+ ", doj=" + doj + ", age=" + age + "]";
 	}
 
-	
 }

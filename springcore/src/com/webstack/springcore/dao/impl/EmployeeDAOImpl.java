@@ -17,26 +17,28 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 	private JdbcTemplate jdbcTemplate;
 	
 	@Override
-	public void save(EmployeeDTO type) {
+	public void save(EmployeeDTO employeeDTO) {
 		// TODO Auto-generated method stub
-		
+		String sql = "insert into employee_details (id,name,designation,salary,age,doj) values (?,?,?,?,?,?)";
+		this.jdbcTemplate.update(sql,employeeDTO.getId(),employeeDTO.getName(),employeeDTO.getDesignation(),employeeDTO.getSalary(),employeeDTO.getAge(),employeeDTO.getDoj());
 	}
 
 	@Override
 	public EmployeeDTO get(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "select * from employee_details where id = ?";
+		return (EmployeeDTO) this.jdbcTemplate.queryForObject(sql,new Object[] {id},new BeanPropertyRowMapper(EmployeeDTO.class));		
 	}
 
 	@Override
-	public void delete(Long id) {
-		// TODO Auto-generated method stub
-		
+	public void delete(Long id) {		
+		String sql = "delete from employee_details where id = ?";
+		this.jdbcTemplate.update(sql,new Object[] {id});
 	}
 
 	@Override
-	public void update(EmployeeDTO type) {
-		// TODO Auto-generated method stub
+	public void update(EmployeeDTO employeeDTO) {		
+		String sql = "update employee_details set name=?,designation=?,salary=?,age=?,doj=? where id = ?";
+		this.jdbcTemplate.update(sql,employeeDTO.getName(),employeeDTO.getDesignation(),employeeDTO.getSalary(),employeeDTO.getAge(),employeeDTO.getDoj(),employeeDTO.getId());
 		
 	}
 
