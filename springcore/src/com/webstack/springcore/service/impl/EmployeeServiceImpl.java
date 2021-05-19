@@ -1,5 +1,6 @@
 package com.webstack.springcore.service.impl;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 	private EmployeeDAO employeeDAO;
 	
 	@Override
-	public void save(EmployeeDTO employeeDTO) {
+	public void save(EmployeeDTO employeeDTO) {		
 		employeeDAO.save(employeeDTO);
 	}
 

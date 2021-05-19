@@ -5,7 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.core.env.Environment;
 
@@ -23,9 +22,9 @@ public class TestDriver {
 
 	public static void main(String[] args) throws ParseException {
 		// TODO Auto-generated method stub
-		ApplicationContext ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+		AnnotationConfigApplicationContext  ctx = new AnnotationConfigApplicationContext(AppConfig.class);		
 		
-		Message messageBean = ctx.getBean(Message.class);
+		Message messageBean = ctx.getBean(Message.class);		
 		
 		System.out.println(messageBean.getMessage());
 		
@@ -35,7 +34,7 @@ public class TestDriver {
 		
 		System.out.println(messageBean1.getMessage());
 		
-		ExamService examService = ctx.getBean("examServiceImpl",ExamServiceImpl.class);
+		ExamService examService = ctx.getBean(ExamService.class);
 		
 		String question = examService.startExam();
 		
@@ -57,7 +56,8 @@ public class TestDriver {
 		
 		System.out.println("=============================");
 		
-		EmployeeService employeeService = ctx.getBean(EmployeeServiceImpl.class);
+		
+		EmployeeService employeeService = ctx.getBean(EmployeeService.class);
 		
 		List<EmployeeDTO> employeeList = employeeService.list();
 		
@@ -66,11 +66,11 @@ public class TestDriver {
 		employeeList.forEach(data->System.out.println(data));
 		
 		EmployeeDTO employeeDTO = new EmployeeDTO();
-		employeeDTO.setId(10l);
-		employeeDTO.setName("Jigs");
+		employeeDTO.setId(14l);
+		employeeDTO.setName("Pratik");		
 		employeeDTO.setDesignation("Software Engineer");
 		employeeDTO.setSalary(80000.0);
-		String date1="2020-03-01";  
+		String date1="2020-03-02";  
 	    Date dateOfJoininig=new SimpleDateFormat("yyyy-MM-dd").parse(date1); 
 		employeeDTO.setDoj(dateOfJoininig);
 		employeeDTO.setAge(34);

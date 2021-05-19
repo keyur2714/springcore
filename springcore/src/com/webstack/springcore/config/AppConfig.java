@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
@@ -15,6 +16,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import com.webstack.springcore.bean.Contact;
 
 @Configuration
+@EnableAspectJAutoProxy
 @ComponentScan(basePackages = { "com.webstack.springcore" })
 @PropertySource(value = {"classpath:customer.properties","db.properties"},ignoreResourceNotFound = true)
 public class AppConfig {
