@@ -1,0 +1,67 @@
+
+	
+	
+
+		Queue FIFO
+
+		-----------------------
+		front - 5  4  3   2  1 --rear		
+		-----------------------
+		1 will remove
+
+		front = -1
+		rear = -1
+
+		front = 0
+		rear = 0
+
+		1
+		
+		size of queue = 1
+
+		2				
+
+		rear = 1
+
+		size of queue = 2
+	
+		3				
+
+		rear = 2
+
+		size of queue = 3
+
+		4				
+
+		rear = 3
+
+		size of queue = 4
+
+		5				
+
+		rear = 4
+
+		size of queue = 5
+
+		
+		6		--- queue is full		
+
+		rear = 5 --- 
+
+		size of queue = 5					
+		
+		remove()
+		
+		queue[front] = 1 -removed
+		front = front + 1		
+		size = size -1
+
+		5 4 3 2
+
+		6
+		5 % 5 = 0
+		rear = rear % 5
+		
+		queue[5] = 		
+
+		 
