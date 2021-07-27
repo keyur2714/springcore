@@ -1,0 +1,17 @@
+
+	
+	max two child
+	
+			11 - root
+	10				12
+3		22		22	
+
+
+inorder 		3 , 10 , 22 , 11 , 22 , 12
+(left-root-right)
+
+preorder 
+(root-left-right)	11 , 10 , 3 , 22 , 12 , 22
+
+postorder
+(left-right-root)	3 , 22 , 10 , 22 , 12 , 11
