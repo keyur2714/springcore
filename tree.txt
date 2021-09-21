@@ -15,3 +15,51 @@ preorder
 
 postorder
 (left-right-root)	3 , 22 , 10 , 22 , 12 , 11
+
+
+	---Binary Search Tree
+
+	bst.insert(11);
+		bst.insert(3);
+		bst.insert(10);
+		bst.insert(12);
+		bst.insert(22);
+		bst.insert(13);
+
+			11
+	3
+		10		12
+						22
+					13
+
+	left root right
+
+	3 10 11 12 13 22
+
+	11 3 10 12 22 13
+
+	10 3 13 22 12 11
+
+	O(log(n))
+
+10 
+3 
+13 
+22 
+12 
+11 
+
+11 
+3 
+10 
+12 
+22 
+13 
+
+
+3 
+10 
+11 
+12 
+13 
+22 
