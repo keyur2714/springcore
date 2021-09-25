@@ -1,0 +1,33 @@
+
+
+	
+	Hashing it's techniqe for storing data
+
+	
+	--
+
+		110	210 	111	331	551
+
+	
+		hash(data/element) - hashKey / HashCode
+
+h & (130-1)
+
+hash(321)/130
+	
+		--Basket/Bucket--
+
+0	1	2	3	4	5	....130	 
+110	210			31	551
+111	112	
+	444	Country	States	City
+	
+		select * from person where country=India and uid = 111		
+
+		Folder
+			India
+				State
+					City
+						UID
+			China
+			US
